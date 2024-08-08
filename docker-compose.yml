@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  cache-redis:
+    container_name: cache-redis
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --aclfile /usr/local/etc/redis/redis.acl
+    volumes:
+      - cache:/data
+      - ./redis.acl:/usr/local/etc/redis/redis.acl
+volumes:
+  cache:
+    driver: local

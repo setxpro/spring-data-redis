@@ -1,0 +1,3 @@
+user default on nopass ~* &* +@all
+user admin on >senha_forte ~* &* +@all
+user read_only on >senha_leitura ~* &* +@read
